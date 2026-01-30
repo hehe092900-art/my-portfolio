@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>my-portfolio</title>
+    <script>
+      // GitHub Pages SPA 라우팅 해결
+      // 404 페이지를 메인 페이지로 리다이렉트하면서 원래 경로를 쿼리 파라미터로 전달
+      const path = window.location.pathname;
+      const search = window.location.search;
+      const hash = window.location.hash;
+
+      // base path 제거
+      const basePath = '/my-portfolio';
+      const redirectPath = path.replace(basePath, '') || '/';
+
+      // 세션 스토리지에 원래 경로 저장
+      sessionStorage.setItem('redirectPath', redirectPath + search + hash);
+
+      // 메인 페이지로 리다이렉트
+      window.location.replace(basePath + '/' + '?redirect=' + encodeURIComponent(redirectPath));
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
+</html>
