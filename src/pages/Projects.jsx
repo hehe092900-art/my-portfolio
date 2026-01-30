@@ -5,59 +5,61 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
 /**
- * HeroSection 컴포넌트
+ * Projects 페이지 컴포넌트
  *
  * Props:
  * - 없음
  *
  * Example usage:
- * <HeroSection />
+ * <Projects />
  */
-function HeroSection() {
+function Projects() {
   return (
     <Box
-      component="section"
+      component="main"
       sx={{
-        minHeight: '80vh',
+        width: '100%',
+        minHeight: 'calc(100vh - 64px)',
         display: 'flex',
-        alignItems: 'center',
         justifyContent: 'center',
+        alignItems: 'center',
+        py: { xs: 4, md: 8 },
         bgcolor: 'background.default',
-        py: { xs: 8, md: 12 },
       }}
     >
-      <Container maxWidth="md">
+      <Container maxWidth="md" sx={{ py: 4 }}>
         <Card
-          elevation={0}
+          elevation={1}
           sx={{
-            bgcolor: 'secondary.main',
             borderRadius: 3,
+            border: 1,
+            borderColor: 'divider',
           }}
         >
-          <CardContent sx={{ py: { xs: 6, md: 10 }, textAlign: 'center' }}>
+          <CardContent sx={{ py: { xs: 6, md: 10 }, px: { xs: 3, md: 6 } }}>
             <Typography
               variant="h2"
               component="h1"
               sx={{
-                fontSize: { xs: '2rem', md: '3rem' },
+                fontSize: { xs: '2rem', md: '2.5rem' },
                 fontWeight: 700,
                 color: 'text.primary',
-                mb: 3,
+                mb: 4,
+                textAlign: 'center',
               }}
             >
-              Hero Section
+              Projects
             </Typography>
             <Typography
               variant="body1"
               sx={{
                 fontSize: { xs: '1rem', md: '1.25rem' },
                 color: 'text.secondary',
-                maxWidth: 600,
-                mx: 'auto',
+                textAlign: 'center',
                 lineHeight: 1.8,
               }}
             >
-              여기는 Hero 섹션입니다. 메인 비주얼, 이름, 간단 소개가 들어갈 예정입니다.
+              Projects 페이지가 개발될 공간입니다. 포트폴리오 작품들이 들어갈 예정입니다.
             </Typography>
           </CardContent>
         </Card>
@@ -66,4 +68,4 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default Projects;

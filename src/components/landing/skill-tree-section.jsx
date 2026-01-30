@@ -5,59 +5,55 @@ import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
 /**
- * HeroSection 컴포넌트
+ * SkillTreeSection 컴포넌트
  *
  * Props:
  * - 없음
  *
  * Example usage:
- * <HeroSection />
+ * <SkillTreeSection />
  */
-function HeroSection() {
+function SkillTreeSection() {
   return (
     <Box
       component="section"
       sx={{
-        minHeight: '80vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        bgcolor: 'background.default',
         py: { xs: 8, md: 12 },
+        bgcolor: 'secondary.main',
       }}
     >
       <Container maxWidth="md">
         <Card
           elevation={0}
           sx={{
-            bgcolor: 'secondary.main',
+            bgcolor: 'background.paper',
             borderRadius: 3,
           }}
         >
-          <CardContent sx={{ py: { xs: 6, md: 10 }, textAlign: 'center' }}>
+          <CardContent sx={{ py: { xs: 5, md: 8 }, px: { xs: 3, md: 6 } }}>
             <Typography
-              variant="h2"
-              component="h1"
+              variant="h3"
+              component="h2"
               sx={{
-                fontSize: { xs: '2rem', md: '3rem' },
-                fontWeight: 700,
+                fontSize: { xs: '1.75rem', md: '2.25rem' },
+                fontWeight: 600,
                 color: 'text.primary',
                 mb: 3,
+                textAlign: 'center',
               }}
             >
-              Hero Section
+              Skill Tree
             </Typography>
             <Typography
               variant="body1"
               sx={{
-                fontSize: { xs: '1rem', md: '1.25rem' },
+                fontSize: { xs: '1rem', md: '1.125rem' },
                 color: 'text.secondary',
-                maxWidth: 600,
-                mx: 'auto',
+                textAlign: 'center',
                 lineHeight: 1.8,
               }}
             >
-              여기는 Hero 섹션입니다. 메인 비주얼, 이름, 간단 소개가 들어갈 예정입니다.
+              여기는 Skill Tree 섹션입니다. 기술 스택을 트리나 프로그레스바로 시각화할 예정입니다.
             </Typography>
           </CardContent>
         </Card>
@@ -66,4 +62,4 @@ function HeroSection() {
   );
 }
 
-export default HeroSection;
+export default SkillTreeSection;
